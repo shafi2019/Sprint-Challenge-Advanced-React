@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
+import { Player } from './components/Player';
+import { Navbar } from './components/Navbar';
 
-function App() {
+class App extends React.Component {
+  constructor(){
+    super ();
+    this.state ={
+      players: [],
+    }
+  }
+
+  componentDidMount () {
+    axios.get('http://localhost:5000/api/players')
+    .then(response => {
+      console.log("data",response)
+      this.setState ({
+        players: response.data
+      })
+    
+      })
+      .catch (error =>{
+        console.log("Data not received", error)
+    })
+  }
+  render () {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
+  }
 }
 
 export default App;
