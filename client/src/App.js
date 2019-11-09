@@ -1,4 +1,5 @@
 import React from 'react';
+import "./styles.scss";
 import axios from 'axios';
 import { Player } from './components/Player';
 import { Navbar } from './components/Navbar';
