@@ -28,6 +28,12 @@ class App extends React.Component {
   render () {
   return (
     <div className="App">
+        <Navbar />
+       {this.state.players.map (player => (
+        <Player key={player.id} name={player.name}
+        country= {player.country}
+        />
+    ))}   
     </div>
   );
   }
