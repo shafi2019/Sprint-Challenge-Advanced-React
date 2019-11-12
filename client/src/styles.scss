@@ -2,16 +2,19 @@
     font-family: sans-serif;
     text-align: center;
     width: 100%;
+    
   }
   
   * {
     box-sizing: border-box;
+    
   }
   
   html {
     font-size: 62.5%;
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
+    
   }
   
   .navbar {
@@ -29,13 +32,17 @@
   
   .cards {
     display: flex;
-    flex-wrap: wrap;
-    border: 1px dashed whitesmoke;
+    flex-flow: row;
+    border: 1px dashed orange;
     width: 30vw;
     height: 30vh;
     justify-content: center;
     align-items: center;
     margin: 10px;
+    h2{
+        margin: 20px;
+    }
+
   }
 
   .dark-mode__toggle {
@@ -67,6 +74,6 @@
    .navbar {
     background-color: #1F2022;
     border: none;
-  
   }
 }
+
